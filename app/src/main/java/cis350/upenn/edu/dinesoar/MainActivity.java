@@ -1,6 +1,7 @@
 package cis350.upenn.edu.dinesoar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
     public static final int FailedSignInID = 2;
     public static final int SignUpID = 3;
 
-    DBHelper mydb;
+    public static DBHelper mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         mydb = new DBHelper(this);
+        checkLogIn();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         String fontPath = "fonts/Quicksand-Bold.otf";
         TextView txtGhost = (TextView) findViewById(R.id.Title);
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSignIn (View V) {
-        /*
+
         //CURRENTLY IMPLEMENTING
         //EditText edit_username = findViewById(R.id.username);
         //String username = edit_text.toString();
@@ -88,21 +90,37 @@ public class MainActivity extends AppCompatActivity {
         String username = "test username";
         String password = "test password";
         Intent i;
-        if (verifyAccount(username, password)) {
+        if (mydb.verifyAccount(username, password)) {
             i = new Intent(this, ProfileHomePageActivity.class);
             i.putExtra("username", username);
             startActivityForResult(i, ProfileHomePageID);
+            finish();
         } else {
             i = new Intent(this, FailedSignIn.class);
             startActivityForResult(i, FailedSignInID);
         }
-        */
+
     }
 
     public void onSignUp (View V) {
 
         Intent i = new Intent(this, SignUpActivity.class);
         startActivityForResult(i, SignUpID);
+    }
+
+    public boolean checkLogIn() {
+        SharedPreferences logInInfo = getSharedPreferences(mydb.sharedPrefName(), 0);
+        String username = logInInfo.getString("username", null);
+        if (username == null) {
+            return false;
+        }
+        else {
+            Intent i = new Intent(this, ProfileHomePageActivity.class);
+            i.putExtra("username", username);
+            startActivityForResult(i, ProfileHomePageID);
+            finish();
+        }
+        return false;
     }
 
 }

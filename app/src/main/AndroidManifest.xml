@@ -23,6 +23,16 @@
             android:label="@string/title_activity_sign_up"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".ProfileHomePageActivity"
+            android:label="@string/title_activity_profile_home_page"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".FailedSignIn"
+            android:label="@string/title_activity_failed_sign_in"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

@@ -2,4 +2,6 @@
     <string name="app_name">DineSoar</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_profile_home_page">ProfileHomePageActivity</string>
+    <string name="title_activity_failed_sign_in">FailedSignIn</string>
 </resources>
