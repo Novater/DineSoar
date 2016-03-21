@@ -78,10 +78,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSignIn (View V) {
+        /*
+        //CURRENTLY IMPLEMENTING
         //EditText edit_username = findViewById(R.id.username);
         //String username = edit_text.toString();
         //EditText edit_password = findViewById(R.id.password);
         //String password = edit_text.toString();
+
         String username = "test username";
         String password = "test password";
         Intent i;
@@ -93,9 +96,11 @@ public class MainActivity extends AppCompatActivity {
             i = new Intent(this, FailedSignIn.class);
             startActivityForResult(i, FailedSignInID);
         }
+        */
     }
 
     public void onSignUp (View V) {
+
         Intent i = new Intent(this, SignUpActivity.class);
         startActivityForResult(i, SignUpID);
     }
