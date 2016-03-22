@@ -5,28 +5,59 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
 
 public class MainActivity extends AppCompatActivity {
-
+    CallbackManager callbackManager;
     public static final int ProfileHomePageID = 1;
     public static final int FailedSignInID = 2;
     public static final int SignUpID = 3;
 
     public static DBHelper mydb;
+    Animation buttonClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         mydb = new DBHelper(this);
         checkLogIn();
+        FacebookSdk.sdkInitialize(getApplicationContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        callbackManager = CallbackManager.Factory.create();
+        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            //NOT IMPLEMENTED
+            @Override
+            public void onCancel() {
+
+            }
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+            }
+            @Override
+            public void onError(FacebookException facebookException) {
+
+            }
+        });
 
         String fontPath = "fonts/Quicksand-Bold.otf";
         TextView txtGhost = (TextView) findViewById(R.id.Title);
@@ -49,44 +80,30 @@ public class MainActivity extends AppCompatActivity {
         TextView txtGhost5 = (TextView) findViewById(R.id.registerNow);
         txtGhost5.setTypeface(tf);
 
+        TextView txtGhost6 = (TextView) findViewById(R.id.or);
+        txtGhost6.setTypeface(tf3);
+
         txtGhost5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onSignUp(v);
             }
         });
+
+        //ADD ANIMATIONS TO LOGIN BUTTON AND SIGN UP BUTTON
+        Button logIn = (Button) findViewById(R.id.loginButton);
+
+        buttonClick = AnimationUtils.loadAnimation(this, R.anim.button_press);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void onSignIn (View V) {
+    public void onSignIn (View v) {
 
         //CURRENTLY IMPLEMENTING
         //EditText edit_username = findViewById(R.id.username);
         //String username = edit_text.toString();
         //EditText edit_password = findViewById(R.id.password);
         //String password = edit_text.toString();
-
+        v.startAnimation(buttonClick);
         String username = "test username";
         String password = "test password";
         Intent i;
@@ -106,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(this, SignUpActivity.class);
         startActivityForResult(i, SignUpID);
+        finish();
     }
 
     public boolean checkLogIn() {
