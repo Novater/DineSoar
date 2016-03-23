@@ -15,10 +15,15 @@ import android.widget.TextView;
 public class ProfileHomePageActivity extends AppCompatActivity {
     public static final int FindRestaurantID = 0;
     public static final int LogOutID = 1;
+    public static final int NavigationID = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_home_page);
+
+        Toolbar toolBar = (Toolbar) findViewById(R.id.my_toolbar_home);
+        setSupportActionBar(toolBar);
 
         /*
         String fontPath = "fonts/Helvetica_Light-Normal.ttf";

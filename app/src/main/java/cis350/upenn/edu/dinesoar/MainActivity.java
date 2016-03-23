@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Animation buttonClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        System.out.println("HI");
         mydb = new DBHelper(this);
         checkLogIn();
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         //String username = edit_text.toString();
         //EditText edit_password = findViewById(R.id.password);
         //String password = edit_text.toString();
-        v.startAnimation(buttonClick);
         String username = "test username";
         String password = "test password";
         Intent i;

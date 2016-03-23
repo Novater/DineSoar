@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
                 android:textSize="15sp"
-                android:hint="Username"
+                android:hint="Email"
                 android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
@@ -97,7 +97,7 @@
         android:layout_marginBottom="24dp"
         android:textColor="#A0FFFFFF"
         android:text="Login"
-        android:background="@color/colorSkyBlue"
+        android:background="@drawable/button_press"
         android:onClick="onSignIn"
         ></Button>
     <LinearLayout

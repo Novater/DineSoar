@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorSkyBlue">#FF3FC0FF</color>
+    <color name="darkerSkyBlue">#FF3F70FF</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="primary">#E43F3F</color>
@@ -9,6 +10,7 @@
     <color name="primary_darker">#CC1D1D</color>
     <color name="accent">#FFFFFF</color>
     <color name="colorDarkBrown">#2C281D</color>
+    <color name="colorLightBrown">#734d26</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
