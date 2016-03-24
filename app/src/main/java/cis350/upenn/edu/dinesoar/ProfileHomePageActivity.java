@@ -2,7 +2,11 @@ package cis350.upenn.edu.dinesoar;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,14 +20,26 @@ public class ProfileHomePageActivity extends AppCompatActivity {
     public static final int FindRestaurantID = 0;
     public static final int LogOutID = 1;
     public static final int NavigationID = 2;
+    private Toolbar toolbar;
+
+    public void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        toolbar.showOverflowMenu();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_home_page);
+        initToolbar();
 
-        Toolbar toolBar = (Toolbar) findViewById(R.id.my_toolbar_home);
-        setSupportActionBar(toolBar);
 
         /*
         String fontPath = "fonts/Helvetica_Light-Normal.ttf";

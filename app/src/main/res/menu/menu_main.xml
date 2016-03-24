@@ -6,12 +6,12 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
     <Item
         android:id="@+id/action_search"
         android:orderInCategory="200"
         android:title="Search"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         ></Item>
 </menu>

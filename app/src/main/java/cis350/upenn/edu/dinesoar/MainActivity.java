@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Animation buttonClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("HI");
+
         mydb = new DBHelper(this);
         checkLogIn();
         FacebookSdk.sdkInitialize(getApplicationContext());
