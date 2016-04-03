@@ -3,51 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFFFF"
+    android:background="@color/colorLightGray"
     android:label="Dinesoar"
     tools:context=".ProfileHomePageActivity">
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar"
         />
-    <ImageButton
-        android:id="@+id/restaurant_button"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="143dp"
+    <ScrollView
         android:layout_below="@+id/app_bar"
-        android:background="@drawable/restaurant_press"
-        android:elevation="4dp"
-        android:clickable="true"
-        android:onClick="findRestaurant" />
-    <ImageButton
-        android:id="@+id/make_group"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="143dp"
-        android:layout_below="@+id/restaurant_button"
-        android:background="@drawable/restaurant_press"
-        android:elevation="4dp"
-        android:clickable="true"
-        android:onClick="findRestaurant" />
-    <ImageButton
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="143dp"
-        android:layout_below="@+id/make_group"
-        android:background="@drawable/restaurant_press"
-        android:elevation="4dp"
-        android:clickable="true"
-        android:onClick="findRestaurant" />
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <!-- A CardView that contains a TextView -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="200dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="2dp">
+             
+             <TextView
+                android:id="@+id/info_text"
+                android:text="HI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
     <android.support.v7.widget.Toolbar  xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/actionbarBottom"

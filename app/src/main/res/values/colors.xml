@@ -12,6 +12,9 @@
     <color name="colorDarkBrown">#2C281D</color>
     <color name="colorLightBrown">#d2a679</color>
     <color name="colorDarkGray">#737373</color>
+    <color name="colorLightBlue">#80dfff</color>
+    <color name="colorMediumBlue">#0099cc</color>
+    <color name="colorLightGray">#f2f2f2</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
