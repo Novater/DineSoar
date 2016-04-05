@@ -6,4 +6,6 @@
     <string name="title_activity_failed_sign_in">FailedSignIn</string>
     <string name="title_activity_find_restaurant">FindRestaurantActivity</string>
     <string name="facebook_app_id">1696896733891462</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_closed">Drawer Closed</string>
 </resources>

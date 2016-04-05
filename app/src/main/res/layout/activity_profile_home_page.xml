@@ -10,80 +10,93 @@
         android:id="@+id/app_bar"
         layout="@layout/app_bar"
         />
-    <ScrollView
-        android:layout_below="@+id/app_bar"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        >
-        <LinearLayout
+    <android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_below="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <!-- A CardView that contains a TextView -->
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_height="200dp"
-                card_view:cardElevation="4dp"
-                card_view:cardCornerRadius="2dp">
-             
-             <TextView
-                android:id="@+id/info_text"
-                android:text="HI"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-    </ScrollView>
-
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+        <ListView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|start"
+            android:id="@+id/nav_list"
+            android:background="#B4A28F">
+        </ListView>
+    </android.support.v4.widget.DrawerLayout>
     <android.support.v7.widget.Toolbar  xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/actionbarBottom"
+        android:id="@+id/navigation_bar"
         android:layout_width="match_parent"
-        android:background="@color/colorLightBrown"
+        android:background="@color/colorLighterBrown"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
         android:layout_height="40dp"
         android:elevation="4dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/app_bar"
+        android:layout_weight="0"
         app:theme="@style/Base.Theme.AppCompat.CompactMenu" >
 
-    <LinearLayout
-        android:id="@+id/bottomtoolbarmenucontainer"
-        android:layout_width="match_parent"
-        android:weightSum="3"
-        android:layout_marginRight="16.5dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" >
-
-        <ImageButton
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/bottomtoolbarmenucontainer"
+            android:layout_width="match_parent"
+            android:weightSum="3"
             android:layout_height="match_parent"
-            android:background="@color/colorLightBrown"
-            android:clickable="true"
-            android:layout_weight = "1"
-            android:src="@drawable/ic_action_select_all"
-            android:onClick="onLogOut" />
+            android:orientation="horizontal" >
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorLightBrown"
-            android:clickable="true"
-            android:layout_weight = "1"
-            android:src="@drawable/ic_action_select_all" />
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorLightBrown"
-            android:clickable="true"
-            android:layout_weight = "1"
-            android:src="@drawable/ic_action_select_all" />
-    </LinearLayout>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/dining_group_button"
+                android:background="@drawable/tab_button"
+                android:clickable="true"
+                android:layout_weight = "1"
+                android:singleLine="true"
+                android:elevation="4dp"
+                android:text="Dining"
+                android:textColor="@color/offWhite"
+                android:onClick="switchFragmentDining" />
+            <View
+                android:layout_width="0.9dp"
+                android:layout_height="35dp"
+                android:alpha="0.3"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorLightBrown"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/history_fragment_button"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:layout_weight = "1"
+                android:elevation="4dp"
+                android:text="History"
+                android:textColor="@color/offWhite"
+                android:onClick="switchFragmentTransaction" />
+            <View
+                android:layout_width="0.9dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:alpha="0.3"
+                android:background="@color/colorLightBrown"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_button"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:layout_weight = "1"
+                android:elevation="4dp"
+                android:text="Profile"
+                android:textColor="@color/offWhite"
+                android:onClick="switchFragmentProfile" />
+        </LinearLayout>
     </android.support.v7.widget.Toolbar>
 </RelativeLayout>
 

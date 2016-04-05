@@ -10,11 +10,12 @@
     <color name="primary_darker">#CC1D1D</color>
     <color name="accent">#FFFFFF</color>
     <color name="colorDarkBrown">#2C281D</color>
-    <color name="colorLightBrown">#d2a679</color>
+    <color name="colorLightBrown">#7C7062</color>
     <color name="colorDarkGray">#737373</color>
     <color name="colorLightBlue">#80dfff</color>
     <color name="colorMediumBlue">#0099cc</color>
     <color name="colorLightGray">#f2f2f2</color>
+    <color name="colorLighterBrown">#B4A28F</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
@@ -25,4 +26,5 @@
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
+    <color name="offWhite">#F7F6F4</color>
 </resources>
