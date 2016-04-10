@@ -65,6 +65,23 @@
             <View
                 android:layout_width="0.9dp"
                 android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:alpha="0.3"
+                android:background="@color/colorLightBrown"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_button"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:layout_weight = "1"
+                android:elevation="4dp"
+                android:text="Chat"
+                android:textColor="@color/offWhite"
+                android:onClick="switchFragmentProfile" />
+            <View
+                android:layout_width="0.9dp"
+                android:layout_height="35dp"
                 android:alpha="0.3"
                 android:layout_gravity="center_vertical"
                 android:background="@color/colorLightBrown"/>
@@ -79,23 +96,6 @@
                 android:text="History"
                 android:textColor="@color/offWhite"
                 android:onClick="switchFragmentTransaction" />
-            <View
-                android:layout_width="0.9dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:alpha="0.3"
-                android:background="@color/colorLightBrown"/>
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/profile_button"
-                android:background="?android:selectableItemBackground"
-                android:clickable="true"
-                android:layout_weight = "1"
-                android:elevation="4dp"
-                android:text="Profile"
-                android:textColor="@color/offWhite"
-                android:onClick="switchFragmentProfile" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 </RelativeLayout>

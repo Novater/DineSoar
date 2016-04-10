@@ -16,6 +16,8 @@
     <color name="colorMediumBlue">#0099cc</color>
     <color name="colorLightGray">#f2f2f2</color>
     <color name="colorLighterBrown">#B4A28F</color>
+    <color name="colorPrimaryBlue">#1A62A3</color>
+    <color name="colorSecondaryBlue">#E0EAF4</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>

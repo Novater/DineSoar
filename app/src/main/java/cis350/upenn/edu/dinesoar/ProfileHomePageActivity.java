@@ -32,6 +32,7 @@ public class ProfileHomePageActivity extends AppCompatActivity {
     public static final int FindRestaurantID = 0;
     public static final int LogOutID = 1;
     public static final int NavigationID = 2;
+    public static final int StartDiningGroupID = 3;
     private Toolbar toolbar;
     private String activityTitle;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -197,6 +198,7 @@ public class ProfileHomePageActivity extends AppCompatActivity {
                 currentFragButt.setBackgroundResource(outValue.resourceId);
             }
         }
+
         Fragment myFragment3 = (Fragment)getFragmentManager().findFragmentByTag("DINING_FRAGMENT");
         if (myFragment3 == null) {
             Button clickedButton = (Button) findViewById(R.id.dining_group_button);

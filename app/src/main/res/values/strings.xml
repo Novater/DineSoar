@@ -8,4 +8,5 @@
     <string name="facebook_app_id">1696896733891462</string>
     <string name="drawer_open">Drawer Open</string>
     <string name="drawer_closed">Drawer Closed</string>
+    <string name="title_activity_start_dining_group">StartDiningGroupActivity</string>
 </resources>
